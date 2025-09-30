@@ -19,7 +19,7 @@ app.set("view engine", "ejs")
 app.get("/", (req, res) => {
 
     /*res.send("Hello My World 555");*/
-    res.render("index", { username: "Joeyza55+", customers: ["A", "B", "C"] });
+    res.render("index", { username: "Joeyza55+", customers: ["ABC", "B", "C"] });
 
 })
 
