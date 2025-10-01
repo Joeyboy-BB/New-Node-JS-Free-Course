@@ -15,7 +15,7 @@ app.set("views", "./src/views");
 app.set("view engine", "ejs")
 
 productRouter.route("/1").get((reg, res) => {
-    res.send("Hello World, I'm products 1")
+    res.send("Hello World, I'm products")
 })
 
 app.use("/products", productRouter)
