@@ -13,6 +13,8 @@ app.use(express.static(path.join(__dirname, "/public/")));
 app.set("views", "./src/views");
 app.set("view engine", "ejs")
 
+app.get("/products")
+
 /*app.get("/Hello")*/
 
 /* จัดการ request ที่เข้ามาในหน้า / จะส่งข้อมูลอะไรกลับไป */
