@@ -113,6 +113,11 @@
 <section>
   <div class="container">
     <h1>Hello World</h1>
+    <% products.map((products) => {
+      <h4><% =products.productTitle %></h4>
+      <p><% =products.productDescription %></p>
+    })
+    %>
   </div>
 </section>
 
