@@ -1,4 +1,4 @@
-// const express = require('express'); ดึง express
+const express = require('express'); //ดึง express
 const chalk = require('chalk'); //ดึง chalk
 const debug = require('debug')('app'); //ดึง debug
 const morgan = require('morgan');
@@ -6,7 +6,7 @@ const path = require('path');
 //const products = require('./data/products.json');
 //const productRouter = express.Router();
 
-const app = express(); //สร้างตัวแปรเพื่อใช้ express.js
+const app = express();//สร้างตัวแปรเพื่อใช้ express.js
 const PORT = process.env.PORT || 4000;
 const productsRouter = require("./src/router/productsRouter");
 
