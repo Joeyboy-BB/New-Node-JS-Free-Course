@@ -1,13 +1,14 @@
-const express = require('express'); //ดึง express
+// const express = require('express'); ดึง express
 const chalk = require('chalk'); //ดึง chalk
 const debug = require('debug')('app'); //ดึง debug
 const morgan = require('morgan');
 const path = require('path');
-const products = require('./data/products.json');
-const productRouter = express.Router();
+//const products = require('./data/products.json');
+//const productRouter = express.Router();
 
 const app = express(); //สร้างตัวแปรเพื่อใช้ express.js
 const PORT = process.env.PORT || 4000;
+const productsRouter = require("./src/router/productsRouter");
 
 app.use(morgan('combined'));
 app.use(express.static(path.join(__dirname, "/public/"))); //set ให้เปิดไฟล์ index.html เมื่อเริ่มต้นถ้ามีไฟล์
@@ -28,11 +29,13 @@ productRouter.route("/").get((req, res) => {
 */
 
 //ส่งข้อมูลแบบสั้น
+/*
 productRouter.route("/").get((req, res) => {
     res.render("products", {
         products,
     });
 });
+*/
 
 /*สร้าง route สำหรับเปิด localhost:3000/products1
 productRouter.route("/1").get((req, res) => {
@@ -47,14 +50,16 @@ productRouter.route("/:id").get((req, res) => {
 });
 */
 
+/*
 productRouter.route("/:id").get((req, res) => {
     const id = req.params.id;
     res.render("product", {
         product: products[id],
     })
 });
+*/
 
-app.use("/products", productRouter)
+app.use("/products", productsRouter)
 
 /*app.get("/Hello")*/
 
