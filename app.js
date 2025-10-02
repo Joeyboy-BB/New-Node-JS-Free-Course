@@ -16,7 +16,7 @@ app.set("views", "./src/views");
 app.set("view engine", "ejs")
 
 /* ส่งข้อมูลแบบยาว
-productRouter.route("/").get((reg, res) => {
+productRouter.route("/").get((req, res) => {
     res.render("products", {
         products: [
             {productTitle: "น้ำยาล้างจาน", productDescription: "น้ำยาสูตร 1", productPrice: 45},
@@ -28,20 +28,20 @@ productRouter.route("/").get((reg, res) => {
 */
 
 //ส่งข้อมูลแบบสั้น
-productRouter.route("/").get((reg, res) => {
+productRouter.route("/").get((req, res) => {
     res.render("products",
         products,
     );
 });
 
 /*สร้าง route สำหรับเปิด localhost:3000/products1
-productRouter.route("/1").get((reg, res) => {
+productRouter.route("/1").get((req, res) => {
     res.send("Hello World, I'm products 1")
 });
 */
 
-productRouter.route("/:id").get((reg, res) => {
-    const id = reg.params.id;
+productRouter.route("/:id").get((req, res) => {
+    const id = req.params.id;
     res.send("Hello World, I'm products " + id)
 });
 
