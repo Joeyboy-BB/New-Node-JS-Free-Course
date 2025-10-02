@@ -1,16 +1,16 @@
-const express = require('express');
-const chalk = require('chalk');
-const debug = require('debug')('app');
+const express = require('express'); //ดึง express
+const chalk = require('chalk'); //ดึง chalk
+const debug = require('debug')('app'); //ดึง debug
 const morgan = require('morgan');
 const path = require('path');
 const products = require('./data/products.json');
 const productRouter = express.Router();
 
-const app = express();
+const app = express(); //สร้างตัวแปรเพื่อใช้ express.js
 const PORT = process.env.PORT || 4000;
 
 app.use(morgan('combined'));
-app.use(express.static(path.join(__dirname, "/public/")));
+app.use(express.static(path.join(__dirname, "/public/"))); //set ให้เปิดไฟล์ index.html เมื่อเริ่มต้นถ้ามีไฟล์
 
 app.set("views", "./src/views");
 app.set("view engine", "ejs")
@@ -34,6 +34,7 @@ productRouter.route("/").get((reg, res) => {
     );
 });
 
+//สร้าง route สำหรับเปิด localhost:3000/products1
 productRouter.route("/1").get((reg, res) => {
     res.send("Hello World, I'm products 1")
 });
