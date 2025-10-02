@@ -34,9 +34,15 @@ productRouter.route("/").get((reg, res) => {
     );
 });
 
-//สร้าง route สำหรับเปิด localhost:3000/products1
+/*สร้าง route สำหรับเปิด localhost:3000/products1
 productRouter.route("/1").get((reg, res) => {
     res.send("Hello World, I'm products 1")
+});
+*/
+
+productRouter.route("/:id").get((reg, res) => {
+    const id = req.params.id;
+    res.send("Hello World, I'm products " + id)
 });
 
 app.use("/products", productRouter)
