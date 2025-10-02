@@ -15,10 +15,22 @@ app.use(express.static(path.join(__dirname, "/public/")));
 app.set("views", "./src/views");
 app.set("view engine", "ejs")
 
+/*
 productRouter.route("/").get((reg, res) => {
     res.render("products", {
-        products,
+        products: [
+            {productTitle: "น้ำยาล้างจาน", productDescription: "น้ำยาสูตร 1", productPrice: 45},
+            {productTitle: "น้ำยาล้างจาน 2", productDescription: "น้ำยาสูตร 2", productPrice: 60},
+            {productTitle: "น้ำยาล้างจาน 3", productDescription: "น้ำยาสูตร 3", productPrice: 75},
+        ],
     })
+});
+*/
+
+productRouter.route("/").get((reg, res) => {
+    res.render("products",
+        products,
+    );
 });
 
 productRouter.route("/1").get((reg, res) => {
