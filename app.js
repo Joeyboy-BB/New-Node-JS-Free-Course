@@ -29,9 +29,9 @@ productRouter.route("/").get((req, res) => {
 
 //ส่งข้อมูลแบบสั้น
 productRouter.route("/").get((req, res) => {
-    res.render("products",
+    res.render("products", {
         products,
-    );
+    });
 });
 
 /*สร้าง route สำหรับเปิด localhost:3000/products1
