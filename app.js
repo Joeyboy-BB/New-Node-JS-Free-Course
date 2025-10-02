@@ -15,7 +15,7 @@ app.use(express.static(path.join(__dirname, "/public/")));
 app.set("views", "./src/views");
 app.set("view engine", "ejs")
 
-/*
+/* ส่งข้อมูลแบบยาว
 productRouter.route("/").get((reg, res) => {
     res.render("products", {
         products: [
@@ -27,6 +27,7 @@ productRouter.route("/").get((reg, res) => {
 });
 */
 
+//ส่งข้อมูลแบบสั้น
 productRouter.route("/").get((reg, res) => {
     res.render("products",
         products,
