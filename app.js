@@ -41,7 +41,7 @@ productRouter.route("/1").get((reg, res) => {
 */
 
 productRouter.route("/:id").get((reg, res) => {
-    const id = req.params.id;
+    const id = reg.params.id;
     res.send("Hello World, I'm products " + id)
 });
 
