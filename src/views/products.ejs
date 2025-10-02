@@ -9,17 +9,17 @@
 
 <body>
   <h1>Products</h1>
-  <% products.map((products)=> { %>
+  <% products.map((product)=> { %>
     <h4>
       <a href='/products/<%=products.id%>'>
-        <%=products.productTitle %>
+        <%=product.productTitle %>
       </a>
     </h4>
     <p>
-      <%=products.productDescription %>
+      <%=product.productDescription %>
     </p>
     <p>
-      <%=products.productPrice%>
+      <%=product.productPrice%>
     </p>
     <%})%>
 </body>
