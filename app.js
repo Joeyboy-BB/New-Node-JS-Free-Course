@@ -17,9 +17,9 @@ app.set("view engine", "ejs")
 productRouter.route("/").get((reg, res) => {
     res.render("products", {
         products: [
-            {productTitle: "น้ำยาล้างจาน", productDescription: "น้ำยาสูตร 1", productsPrice: 45},
-            {productTitle: "น้ำยาล้างจาน 2", productDescription: "น้ำยาสูตร 2", productsPrice: 60},
-            {productTitle: "น้ำยาล้างจาน 3", productDescription: "น้ำยาสูตร 3", productsPrice: 75},
+            {productTitle: "น้ำยาล้างจาน", productDescription: "น้ำยาสูตร 1", productPrice: 45},
+            {productTitle: "น้ำยาล้างจาน 2", productDescription: "น้ำยาสูตร 2", productPrice: 60},
+            {productTitle: "น้ำยาล้างจาน 3", productDescription: "น้ำยาสูตร 3", productPrice: 75},
         ],
     })
 });
